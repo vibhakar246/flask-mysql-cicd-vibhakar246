@@ -10,8 +10,11 @@ pipeline {
 
         stage('Deploy with Docker Compose') {
             steps {
-                sh 'docker-compose down || true'
-                sh 'docker-compose up --build -d'
+                sh '''
+                cd flask-mysql-cicd-vibhakar246
+                docker-compose down || true
+                docker-compose up --build -d
+                '''
             }
         }
     }
