@@ -2,16 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Starting CI/CD pipeline'
+                checkout scm
             }
         }
 
-        stage('Deploy with Docker Compose') {
+        stage('Build & Deploy') {
             steps {
                 sh '''
-                cd flask-mysql-cicd-vibhakar246
                 docker-compose down || true
                 docker-compose up --build -d
                 '''
