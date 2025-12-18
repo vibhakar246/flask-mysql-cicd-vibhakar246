@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# ---------- Docker / MySQL ----------
+mysql/
+mysql_data/
+.env
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+
