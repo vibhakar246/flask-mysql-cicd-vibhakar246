@@ -11,7 +11,7 @@ This project demonstrates a **fully automated CI/CD pipeline** to deploy a **two
 - Docker & Docker Compose
 - Jenkins (CI/CD)
 - GitHub
-- AWS EC2 (Ubuntu)
+- Ubuntu (Local Machine)
 
 ---
 
@@ -28,12 +28,12 @@ This project demonstrates a **fully automated CI/CD pipeline** to deploy a **two
 flask-mysql-cicd-vibhakar246/
 │
 ├── app/
-│ ├── app.py
-│ ├── requirements.txt
-│ └── Dockerfile
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
 │
 ├── mysql/
-│ └── init.sql
+│   └── init.sql
 │
 ├── docker-compose.yml
 ├── Jenkinsfile
@@ -43,12 +43,17 @@ flask-mysql-cicd-vibhakar246/
 ---
 
 ## ⚙️ How CI/CD Works
+1.Code is pushed to GitHub
 
-1. Code is pushed to GitHub  
-2. Jenkins pulls the latest code  
-3. Docker images are built  
-4. Containers are deployed using Docker Compose  
-5. Application becomes live on AWS EC2  
+2.GitHub webhook triggers Jenkins (via ngrok)
+
+3.Jenkins pulls the latest code
+
+4.Docker images are built automatically
+
+5.Containers are deployed using Docker Compose
+
+6.Flask application runs locally on http://localhost:5000
 
 ---
 
