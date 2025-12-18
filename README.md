@@ -1,6 +1,6 @@
 # Flask MySQL CI/CD Pipeline – vibhakar246
 
-This project demonstrates a **fully automated CI/CD pipeline** to deploy a **two-tier Flask + MySQL application** on **AWS EC2** using **Jenkins, Docker, and Docker Compose**.
+This project demonstrates a fully automated CI/CD pipeline to deploy a two-tier Flask + MySQL application on a local Ubuntu machine using Jenkins, Docker, and Docker Compose.
 
 ---
 
