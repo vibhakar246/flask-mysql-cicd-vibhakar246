@@ -22,27 +22,18 @@ This project demonstrates a fully automated CI/CD pipeline to deploy a two-tier 
 - Jenkins automates build and deployment  
 - Docker Compose manages the multi-container setup
 
-- 
+  
 🧩 Architecture Diagram
 
-GitHub → Jenkins → Docker Build → Docker Compose → Flask + MySQL Container
 
-
-
-
-Developer (GitHub)
-        |
-        v
-     Jenkins
-        |
-        v
-  Docker Build
-        |
-        v
- Docker Compose
-   |           |
-Flask App   MySQL DB
-
+```mermaid
+flowchart TD
+    A[Developer<br/>GitHub] --> B[Jenkins]
+    B --> C[Docker Build]
+    C --> D[Docker Compose]
+    D --> E[Flask Application]
+    D --> F[MySQL Database]
+```
 
 
 
@@ -52,8 +43,9 @@ Flask App   MySQL DB
 
 
 ## 📁 Project Structure
+
+```text
 flask-mysql-cicd-vibhakar246/
-│
 ├── app/
 │   ├── app.py
 │   ├── requirements.txt
@@ -65,6 +57,7 @@ flask-mysql-cicd-vibhakar246/
 ├── docker-compose.yml
 ├── Jenkinsfile
 └── README.md
+```
 
 
 ---
