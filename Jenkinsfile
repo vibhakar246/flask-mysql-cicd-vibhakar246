@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -6,12 +5,11 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/vibhakar246/flask-mysql-cicd-vibhakar246.git'
+                checkout scm
             }
         }
 
-        stage('Build & Deploy') {
+        stage('Build & Deploy with Docker Compose') {
             steps {
                 sh '''
                 docker compose down || true
@@ -30,3 +28,4 @@ pipeline {
         }
     }
 }
+
