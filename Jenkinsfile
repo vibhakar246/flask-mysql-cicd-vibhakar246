@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,15 +6,13 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                echo 'Cloning repository from GitHub'
                 git branch: 'main',
                     url: 'https://github.com/vibhakar246/flask-mysql-cicd-vibhakar246.git'
             }
         }
 
-        stage('Build & Deploy with Docker Compose') {
+        stage('Build & Deploy') {
             steps {
-                echo 'Running docker compose'
                 sh '''
                 docker compose down || true
                 docker compose up --build -d
