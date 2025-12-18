@@ -13,10 +13,10 @@ pipeline {
 
         stage('Build & Deploy with Docker Compose') {
             steps {
-                echo 'Running docker-compose'
+                echo 'Running docker compose'
                 sh '''
-                docker-compose down || true
-                docker-compose up --build -d
+                docker compose down || true
+                docker compose up --build -d
                 '''
             }
         }
@@ -31,4 +31,3 @@ pipeline {
         }
     }
 }
-
