@@ -1,9 +1,15 @@
-
 pipeline {
     agent any
 
     stages {
-        stage('Build & Deploy with Docker Compose') {
+
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/vibhakar246/flask-mysql-cicd-vibhakar246.git'
+            }
+        }
+
+        stage('Build & Deploy') {
             steps {
                 sh '''
                 docker compose down || true
@@ -11,6 +17,7 @@ pipeline {
                 '''
             }
         }
+
     }
 
     post {
@@ -22,5 +29,3 @@ pipeline {
         }
     }
 }
-
-
